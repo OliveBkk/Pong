@@ -1,11 +1,11 @@
 # Pong
+// variable globale
 float deplacementX, deplacementY;
 float x, y;
 
 float w, z;
 
-void setup() 
-{
+void setup() {
  size(400,400);
  background(0);
  x = 200;
@@ -17,22 +17,18 @@ void setup()
 }
 
 
-void draw() 
-{
+void draw(){
  nettoyer();
  bouger();
  rebondir();
  dessiner();
 }
 
-
-void nettoyer() 
-{  
+void nettoyer() {  
 background(0);
 }
 
-void dessiner() 
-{
+void dessiner() {
   smooth();
   fill(255);
   rect(w,z,25,85);
@@ -40,15 +36,13 @@ void dessiner()
   ellipse(x,y,20,20);
 }
 
-void bouger() 
-{
+void bouger() {
  x = x + deplacementX;
  y = y + deplacementY;
  z = mouseY;
 }
 
-void rebondir() 
-{
+void rebondir() {
  
  // si on est trop à droite et que le déplacement horizontal est positif
  if (x > width-10 ) 
@@ -56,7 +50,6 @@ void rebondir()
    deplacementX = -deplacementX; // inverser la valeur
  }
  
-
  
  // si on est trop bas et le déplacement vertical est positif
  if (y > width-10 ) 
